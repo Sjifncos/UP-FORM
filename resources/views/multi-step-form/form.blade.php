@@ -11,14 +11,18 @@
         <form id="multiStepForm" method="POST">
             @csrf
             {{-- (hidden by default, shown via jQuery) --}}
-            {{-- @include('multi-step-form.index') --}}
-            {{-- @include('multi-step-form.AccessVerification') --}}
-            @include('multi-step-form.step1')
-            @include('multi-step-form.step2')
-            @include('multi-step-form.step3')
-            @include('multi-step-form.step4')
-            @include('multi-step-form.step5')
-            @include('multi-step-form.step6')
+          <!-- Steps in correct order -->
+            @include('multi-step-form.Agreement')      
+            @include('multi-step-form.Verification')  
+            @include('multi-step-form.BasicInfo')      
+            @include('multi-step-form.ContactDetails')
+            @include('multi-step-form.ContactInformation')            
+            @include('multi-step-form.AcademicMatters')        
+            @include('multi-step-form.Education&Employment')            
+            @include('multi-step-form.OtherInfo')
+            @include('multi-step-form.imageupload')        
+            @include('multi-step-form.Undertakings')          
+
 
             <!-- Navigation Buttons -->
             <div class="col-span-1 md:col-span-2">

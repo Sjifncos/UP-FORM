@@ -1,5 +1,11 @@
-<div class="step hidden" data-step="3">
+<div class="step hidden" data-step="6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        <div class="col-span-1 md:col-span-2">
+            <h1 class="text-[24px] font-semibold text-[#850038]">
+                Academic Matters
+            </h1>
+        </div>
+        {{--
         <!-- Senior High School Attended -->
         <div class="relative w-full">
             <input required id="seniorhighschoolattended" name="seniorhighschoolattended" type="text" class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"/>
@@ -8,6 +14,17 @@
             </label>
             <span class="error-message text-red-500 text-sm hidden" data-for="seniorhighschoolattended"></span>
         </div>
+        --}}
+        <div class="relative w-full">
+            <label for="seniorhighschoolattended" class="font-medium">
+                Senior High School Attended
+                <span class="text-red-500 ml-1">*</span>
+            </label>
+            <input required id="seniorhighschoolattended" name="seniorhighschoolattended" type="text"
+                class="peer w-full px-4 py-3 text-base bg-white outline-none 
+                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+        </div>
+        {{--
         <!-- Location Of High School -->
         <div class="relative w-full">
             <input required id="locationofhighschool" name="locationofhighschool" type="text" class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"/>
@@ -16,10 +33,24 @@
             </label>
             <span class="error-message text-red-500 text-sm hidden" data-for="locationofhighschool"></span>
         </div>
+        --}}
+        <div class="relative w-full">
+            <label for="locationofhighschool" class="font-medium">
+                Location of High School
+                <span class="text-red-500 ml-1">*</span>
+            </label>
+            <input required id="locationofhighschool" name="locationofhighschool" type="text"
+                class="peer w-full px-4 py-3 text-base bg-white outline-none 
+                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+        </div>
+        
         <!-- Honors Received -->
         <div class="relative w-full">
                 <label for="honorsreceived" name="locationofhighschool" class="font-medium">Honors received in Senior High School <span class="text-red-500 ml-1">*</span></label>
-                <select id="honorsreceived" name="honorsreceived" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2">
+                <select id="honorsreceived" name="honorsreceived" required 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
+                appearance-none">
                     <option disabled selected>Please Select</option>
                     <option value="none">None</option>
                     <option value="honor">with Honors</option>
@@ -34,9 +65,10 @@
                 Are you on a scholarship other than <span class="font-semibold text-[#850038]">RA 10931</span>
                 <span class="text-red-500 ml-1">*</span>
             </label>
-            <select id="scholarship"  required
+            <select id="scholarship" name="scholarship" required
                 class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none
-                    focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2">
+                    focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
+                    appearance-none">
                 <option disabled selected>Please Select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -46,6 +78,7 @@
         </div>
         <!-- Specify Scholarship -->
         <div id="specifyScholarshipWrapper" class="col-span-1 md:col-span-2 hidden">
+            {{--
             <div class="relative w-full">
                 <input id="specifyscholarship" name="specifyscholarship" type="text"
                     class="peer w-full px-4 py-3 text-base bg-white outline-none border-2
@@ -60,6 +93,16 @@
                 </label>
                 <span class="error-message text-red-500 text-sm hidden" data-for="specifyscholarship"></span>
             </div>
+            --}}
+            <div class="relative w-full">
+            <label for="specifyscholarship" class="font-medium">
+                Please specify the scholarship.
+                <span class="text-red-500 ml-1">*</span>
+            </label>
+            <input required id="specifyscholarship" name="specifyscholarship" type="text"
+                class="peer w-full px-4 py-3 text-base bg-white outline-none 
+                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+        </div>
         </div>
     </div>
 </div>
