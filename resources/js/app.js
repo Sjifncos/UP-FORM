@@ -10,6 +10,53 @@ tailwind.config = {
     },
 };
 
+// ---------- Global Toast Notification System ----------
+const activeToastMessages = new Set();
+
+window.closeToast = function(id) {
+    const $toast = $(`#${id}`);
+    if (!$toast.length) return;
+
+    const message = $toast.data('message');
+    if (message) activeToastMessages.delete(message);
+
+    const timeoutId = $toast.data('timeoutId');
+    if (timeoutId) clearTimeout(timeoutId);
+    $toast.fadeOut(300, function() { $(this).remove(); });
+};
+
+window.showToast = function(message, type = 'error') {
+    if (activeToastMessages.has(message)) return;
+
+    const toastId = 'toast-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    const bgColor = type === 'success' ? 'bg-green-500' : 'bg-[#FF3131]';
+    const icon = type === 'success' ? '' : '';
+
+    const toastHtml = `
+        <div id="${toastId}" class="flex items-center justify-between ${bgColor} text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-x-0 opacity-100">
+            <div class="flex items-center space-x-2">
+                ${icon}
+                <span class="text-sm font-medium">${message}</span>
+            </div>
+            <button class="ml-4 text-white hover:text-gray-200 focus:outline-none close-toast-btn" data-toast-id="${toastId}">
+                <svg fill="#ffffff" width="18px" height="18px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M128,20.00012a108,108,0,1,0,108,108A108.12217,108.12217,0,0,0,128,20.00012Zm0,192a84,84,0,1,1,84-84A84.0953,84.0953,0,0,1,128,212.00012Zm40.48535-107.51465L144.9707,128.00012l23.51465,23.51465a12.0001,12.0001,0,0,1-16.9707,16.9707L128,144.97082l-23.51465,23.51465a12.0001,12.0001,0,0,1-16.9707-16.9707l23.51465-23.51465L87.51465,104.48547a12.0001,12.0001,0,0,1,16.9707-16.9707L128,111.02942l23.51465-23.51465a12.0001,12.0001,0,0,1,16.9707,16.9707Z"/>
+                </svg>
+            </button>
+        </div>
+    `;
+
+    $('#toastContainer').append(toastHtml);
+    const $toast = $(`#${toastId}`);
+    $toast.data('message', message);
+    activeToastMessages.add(message);
+
+    const timeoutId = setTimeout(() => {
+        closeToast(toastId);
+    }, 3000);
+    $toast.data('timeoutId', timeoutId);
+};
+
 $(document).ready(function() {
     // CSRF token setup (kept for any future AJAX, but not used now)
     $.ajaxSetup({
@@ -25,55 +72,7 @@ $(document).ready(function() {
     let visibleSteps = [1,2,3,4,5,6,7,8,9,10];
     let maxVisibleIndex = 0;
 
-    // ---------- Toast Notification System ----------
-    const activeToastMessages = new Set();
-
-    function showToast(message, type = 'error') {
-        if (activeToastMessages.has(message)) return;
-
-        const toastId = 'toast-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        const bgColor = type === 'success' ? 'bg-green-500' : 'bg-[#FF3131]';
-        const icon = type === 'success' 
-            ? '' // for SVG
-            : '';
-
-        const toastHtml = `
-            <div id="${toastId}" class="flex items-center justify-between ${bgColor} text-white px-4 py-3 rounded-lg shadow-lg transform transition-all duration-300 translate-x-0 opacity-100">
-                <div class="flex items-center space-x-2">
-                    ${icon}
-                    <span class="text-sm font-medium">${message}</span>
-                </div>
-                <button class="ml-4 text-white hover:text-gray-200 focus:outline-none close-toast-btn" data-toast-id="${toastId}">
-                    <svg fill="#ffffff" width="18px" height="18px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M128,20.00012a108,108,0,1,0,108,108A108.12217,108.12217,0,0,0,128,20.00012Zm0,192a84,84,0,1,1,84-84A84.0953,84.0953,0,0,1,128,212.00012Zm40.48535-107.51465L144.9707,128.00012l23.51465,23.51465a12.0001,12.0001,0,0,1-16.9707,16.9707L128,144.97082l-23.51465,23.51465a12.0001,12.0001,0,0,1-16.9707-16.9707l23.51465-23.51465L87.51465,104.48547a12.0001,12.0001,0,0,1,16.9707-16.9707L128,111.02942l23.51465-23.51465a12.0001,12.0001,0,0,1,16.9707,16.9707Z"/>
-                    </svg>
-                </button>
-            </div>
-        `;
-
-        $('#toastContainer').append(toastHtml);
-        const $toast = $(`#${toastId}`);
-        $toast.data('message', message);
-        activeToastMessages.add(message);
-
-        const timeoutId = setTimeout(() => {
-            closeToast(toastId);
-        }, 3000);
-        $toast.data('timeoutId', timeoutId);
-    }
-
-    window.closeToast = function(id) {
-        const $toast = $(`#${id}`);
-        if (!$toast.length) return;
-
-        const message = $toast.data('message');
-        if (message) activeToastMessages.delete(message);
-
-        const timeoutId = $toast.data('timeoutId');
-        if (timeoutId) clearTimeout(timeoutId);
-        $toast.fadeOut(300, function() { $(this).remove(); });
-    };
-
+    // ---------- Close Toast Button Handler ----------
     $(document).on('click', '.close-toast-btn', function() {
         closeToast($(this).data('toast-id'));
     });
@@ -262,6 +261,7 @@ $(document).ready(function() {
                 'birthplace',
                 'civilstatus',
                 'citizenship',
+                'same_address',
                 'streetaddressline1_ph',
                 'region',
                 'province',

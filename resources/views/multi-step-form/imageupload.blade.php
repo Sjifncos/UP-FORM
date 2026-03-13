@@ -26,14 +26,7 @@
                 
                 <!-- Dimension error message (hidden by default) -->
                 <div id="dimensionError" class="hidden text-sm text-red-600 font-medium">
-                    Image must be square and with a minmum size of 600x600.
-                </div>
-                
-                <!-- Submit Button -->
-                <div>
-                    <button type="submit" id="uploadButton" class="w-full bg-[#850038] hover:bg-[#FFAD0D] text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out" disabled>
-                        Upload Image
-                    </button>
+                    Image must be square and with a minimum size of 600x600.
                 </div>
             </div>
             <!-- Accepted formats hint (mobile-friendly) -->
@@ -41,7 +34,6 @@
                 Allowed: PNG, JPG, JPEG, WEBP (max. 2MB) <br>
                 <span class="text-[#850038]">Image must be square (aspect ratio 1:1)</span>
             </p>
-
 
             <!-- Instructions Accordion (unchanged) -->
             <div class="accordion space-y-2 mt-2">
@@ -153,22 +145,18 @@
     </div>
 </div>
 
-<!-- JavaScript for Preview & Dimension Validation (unchanged) -->
+<!-- JavaScript for Preview & Dimension Validation (modified: removed upload button logic) -->
 <script>
     (function() {
         const imageInput = document.getElementById('imageInput');
         const previewContainer = document.getElementById('previewContainer');
         const previewImage = document.getElementById('imagePreview');
         const dimensionError = document.getElementById('dimensionError');
-        const uploadButton = document.getElementById('uploadButton');
         
         // State
         let isValidFile = false; // true only when a file with correct dimensions is selected
 
-        // Disable button initially (no file selected)
-        uploadButton.disabled = true;
-
-       // Helper to validate dimensions (square and minimum 600x600)
+        // Helper to validate dimensions (square and minimum 600x600)
         function validateImageDimensions(file) {
             return new Promise((resolve) => {
                 const reader = new FileReader();
@@ -192,7 +180,6 @@
                 // No file selected
                 previewContainer.classList.add('hidden');
                 dimensionError.classList.add('hidden');
-                uploadButton.disabled = true;
                 isValidFile = false;
                 return;
             }
@@ -209,17 +196,15 @@
             const isValid = await validateImageDimensions(file);
             if (isValid) {
                 dimensionError.classList.add('hidden');
-                uploadButton.disabled = false;
                 isValidFile = true;
             } else {
                 dimensionError.classList.remove('hidden');
-                uploadButton.disabled = true;
                 isValidFile = false;
             }
         });
 
         // Prevent form submission if dimensions are invalid
-        const form = uploadButton.closest('form');
+        const form = imageInput.closest('form');
         if (form) {
             form.addEventListener('submit', function(e) {
                 if (!isValidFile) {

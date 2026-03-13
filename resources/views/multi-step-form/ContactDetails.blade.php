@@ -789,8 +789,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadRegions();
 
-    //CURRENT
+    // ===== NEW: Current Address cascading dropdowns =====
+    const currentRegionSelect = document.getElementById('current_region');
+    const currentProvinceSelect = document.getElementById('current_province');
+    const currentCitySelect = document.getElementById('current_city');
+    const currentBarangaySelect = document.getElementById('current_barangay');
+    const currentPsgcInput = document.getElementById('current_PSGC');
 
+    async function loadCurrentRegions() {
+        resetDropdown(currentRegionSelect, "Loading regions...");
+        const regions = await fetchData(`${BASE_URL}/regions`);
+        resetDropdown(currentRegionSelect);
+        populateDropdown(currentRegionSelect, regions);
+    }
+
+    currentRegionSelect.addEventListener("change", async function () {
+        resetDropdown(currentProvinceSelect);
+        resetDropdown(currentCitySelect);
+        resetDropdown(currentBarangaySelect);
+        currentPsgcInput.value = "";
+
+        const provinces = await fetchData(`${BASE_URL}/regions/${this.value}/provinces`);
+        populateDropdown(currentProvinceSelect, provinces);
+    });
+
+    currentProvinceSelect.addEventListener("change", async function () {
+        resetDropdown(currentCitySelect);
+        resetDropdown(currentBarangaySelect);
+        currentPsgcInput.value = "";
+
+        const cities = await fetchData(`${BASE_URL}/provinces/${this.value}/cities-municipalities`);
+        populateDropdown(currentCitySelect, cities);
+    });
+
+    currentCitySelect.addEventListener("change", async function () {
+        resetDropdown(currentBarangaySelect);
+        currentPsgcInput.value = "";
+
+        const barangays = await fetchData(`${BASE_URL}/cities-municipalities/${this.value}/barangays`);
+        populateDropdown(currentBarangaySelect, barangays);
+    });
+
+    currentBarangaySelect.addEventListener("change", function () {
+        currentPsgcInput.value = this.value;
+    });
+
+    loadCurrentRegions();
 
     // --- Toggle foreign fields based on citizenship ---
     const citizenshipSelect = document.getElementById('citizenship');
@@ -861,69 +905,4 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleCurrentAddress(); // Apply initial state (hidden)
     }
 });
-
-
-    /*
-    // --- Toggle foreign fields and heading based on citizenship ---
-    const citizenshipSelect = document.getElementById('citizenship');
-    if (citizenshipSelect) {
-        function toggleForeignFields() {
-            const isPhilippineCitizen = citizenshipSelect.value === 'yes';
-
-            // List of field IDs to hide/show (excluding the heading, handled separately)
-            const fieldIds = [
-                'citizenship_country',
-                'outside_ph_addressline1',
-                'outside_ph_addressline2',
-                'city_foreign',
-                'state/province_foreign',
-                'zipcode_foreign',
-                'foreign_country'
-            ];
-
-            fieldIds.forEach(id => {
-                const element = document.getElementById(id);
-                if (!element) return;
-
-                // Find the container div that wraps the label and input/select
-                let container;
-                if (id === 'outside_ph_addressline1' || id === 'outside_ph_addressline2') {
-                    // These inputs are inside an inner .relative.w-full; the outer div contains the hint
-                    container = element.closest('.relative.w-full').parentElement;
-                } else if (id === 'zipcode_foreign') {
-                    // zipcode_foreign has an outer div with mt-8 that also contains an error span
-                    container = element.closest('.relative.w-full').parentElement;
-                } else {
-                    // All others: the input/select is directly inside the container div
-                    container = element.closest('.relative.w-full');
-                }
-
-                if (container) {
-                    if (isPhilippineCitizen) {
-                        container.style.display = 'none';
-                        element.disabled = true;      // disable to prevent submission
-                        element.required = false;     // remove required to avoid validation
-                    } else {
-                        container.style.display = '';
-                        element.disabled = false;
-                        element.required = true;      // restore required
-                    }
-                } else {
-                    console.warn('Container not found for', id);
-                }
-            });
-
-            // Handle the heading separately
-            const heading = document.getElementById('outside_ph_heading');
-            if (heading) {
-                heading.style.display = isPhilippineCitizen ? 'none' : '';
-            }
-        }
-
-        // Run on change and on page load
-        citizenshipSelect.addEventListener('change', toggleForeignFields);
-        toggleForeignFields();
-    }
-});
-*/
 </script>

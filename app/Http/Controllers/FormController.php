@@ -28,6 +28,7 @@
         // Contact Details (always required)
         'citizenship' => 'required|in:yes,no',
         'citizenship_country' => 'exclude_if:citizenship,yes|required|string|max:255',
+        'same_address' => 'required|in:yes,no',
         'outside_ph_addressline1' => 'exclude_if:citizenship,yes|required|string|max:255',
         'outside_ph_addressline2' => 'exclude_if:citizenship,yes|nullable|string|max:255',
         'city_foreign' => 'exclude_if:citizenship,yes|required|string|max:255',

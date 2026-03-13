@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>UP CEBU AMIS</title>
-    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/palatino" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

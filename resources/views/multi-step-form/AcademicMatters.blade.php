@@ -103,6 +103,17 @@
                 class="peer w-full px-4 py-3 text-base bg-white outline-none 
                     border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
+            <button class="bg-[#850038] hover:bg-[#FFAD0D] text-white py-2 px-4 rounded inline-flex items-center gap-2 mt-4"> 
+                    <svg width="24" height="24" viewBox="0 0 24 24" role="img" 
+                    xmlns="http://www.w3.org/2000/svg" aria-labelledby="addIconTitle" stroke="currentColor" 
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"> 
+                        <title id="addIconTitle">
+                            Add
+                        </title> <path d="M17 12L7 12M12 17L12 7"/> 
+                        <circle cx="12" cy="12" r="10"/> 
+                    </svg> 
+                    Add another entry
+            </button>
         </div>
     </div>
 </div>
