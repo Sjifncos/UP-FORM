@@ -7,6 +7,7 @@
    
     // Route to display the multi-step form
     Route::get('/', function () {return view('multi-step-form.form');})->name('form');
+    Route::get('/date', function () {return view('multi-step-form.datepicker');})->name('datepicker');
     Route::get('/index', function () {return view('multi-step-form.index');});
     Route::get('/thankyoupage', function () {return view('multi-step-form.submission');});
 
@@ -15,4 +16,4 @@
 
     // PSGC Route
     Route::get('/psgc', [PsgcController::class, 'index']);
-    //Route::get('/psgc', [current_PsgcController::class, 'index']);
+    Route::get('/psgc', [current_PsgcController::class, 'index']);

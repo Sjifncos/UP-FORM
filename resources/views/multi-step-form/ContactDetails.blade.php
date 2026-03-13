@@ -789,6 +789,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadRegions();
 
+    //CURRENT
+
 
     // --- Toggle foreign fields based on citizenship ---
     const citizenshipSelect = document.getElementById('citizenship');
@@ -859,6 +861,7 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleCurrentAddress(); // Apply initial state (hidden)
     }
 });
+
 
     /*
     // --- Toggle foreign fields and heading based on citizenship ---

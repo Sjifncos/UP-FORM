@@ -26,7 +26,7 @@
                 
                 <!-- Dimension error message (hidden by default) -->
                 <div id="dimensionError" class="hidden text-sm text-red-600 font-medium">
-                    Image must be square (width and height must be equal).
+                    Image must be square and with a minmum size of 600x600.
                 </div>
                 
                 <!-- Submit Button -->
@@ -168,14 +168,14 @@
         // Disable button initially (no file selected)
         uploadButton.disabled = true;
 
-        // Helper to validate dimensions (square only)
+       // Helper to validate dimensions (square and minimum 600x600)
         function validateImageDimensions(file) {
             return new Promise((resolve) => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const img = new Image();
                     img.onload = function() {
-                        const isValid = (img.width === img.height); // square check
+                        const isValid = (img.width === img.height) && img.width >= 600 && img.height >= 600;
                         resolve(isValid);
                     };
                     img.src = e.target.result;

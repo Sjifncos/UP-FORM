@@ -189,7 +189,8 @@
                 class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
-        <div id="guardian-section" class="col-span-1 md:col-span-2">
+        <!-- Guardian's Information - Hidden by default -->
+        <div id="guardian-section" class="col-span-1 md:col-span-2 hidden">
             <h1 class="text-[18px] font-semibold text-[#850038]">Guardian's Information</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <!-- Guardian's First Name -->

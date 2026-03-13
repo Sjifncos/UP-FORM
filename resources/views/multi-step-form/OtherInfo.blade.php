@@ -96,6 +96,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
                 <!-- Left column -->
                 <div class="relative w-full space-y-3">
+                    {{--
                     <label class="flex items-center space-x-2">
                         <input type="checkbox" name="disability_types[]" value="visual" class="h-4 w-4 disability-checkbox">
                         <span>Visual disability</span>
@@ -119,6 +120,32 @@
                                 </p>
                             </div>
                         </div>
+                        </div>
+                    </label>
+                    --}}
+                    <label class="flex items-center space-x-2">
+                        <input type="checkbox" name="disability_types[]" value="visual" class="h-4 w-4 disability-checkbox">
+                        <span>Visual disability</span>
+
+                        <div class="relative group inline-block">
+                            <!-- Trigger: SVG icon -->
+                            <div class="cursor-pointer">
+                                <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="#850038" stroke-width="2"/>
+                                    <path d="M10 8.48352C10.5 7.49451 11 7 12 7C13.2461 7 14 7.98901 14 8.97802C14 9.96703 13.5 10.4615 12 11.4505V13M12 16.5V17" stroke="#850038" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+
+                            <!-- Tooltip content (RIGHT SIDE) -->
+                            <div class="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition duration-100 transform group-hover:translate-x-0 translate-x-2 pointer-events-none">
+                                <div class="bg-[#850038] w-max max-w-xs text-white rounded-lg px-4 py-4">
+                                    <p class="font-bold text-md mb-1">Visual disability:</p>
+                                    <p class="text-sm">
+                                       Difficulty seeing or visual impairment that significantly affects daily activities,
+                                    even with correction.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </label>
                     {{--
@@ -157,6 +184,7 @@
                         <span>Speech or language impairment</span>
                     </label>
                     --}}
+                    {{--
                     <label class="flex items-center space-x-2">
                         <input type="checkbox" name="disability_types[]" value="speech" class="h-4 w-4 disability-checkbox">
                         <span>Speech or language impairment</span>
@@ -179,6 +207,31 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </label>
+                    --}}
+                    <label class="flex items-center space-x-2">
+                        <input type="checkbox" name="disability_types[]" value="speech" class="h-4 w-4 disability-checkbox">
+                        <span>Speech or language impairment</span>
+
+                        <div class="relative group inline-block">
+                            <!-- Trigger: SVG icon -->
+                            <div class="cursor-pointer">
+                                <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="#850038" stroke-width="2"/>
+                                    <path d="M10 8.48352C10.5 7.49451 11 7 12 7C13.2461 7 14 7.98901 14 8.97802C14 9.96703 13.5 10.4615 12 11.4505V13M12 16.5V17" stroke="#850038" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+
+                            <!-- Tooltip content (RIGHT SIDE) -->
+                           <div class="absolute left-1/2 bottom-full -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition duration-100 transform group-hover:translate-y-0 translate-y-2 pointer-events-none">
+                            <div class="bg-[#850038] w-max max-w-xs text-white rounded-lg px-4 py-4">
+                                <p class="font-bold text-md mb-1">Speech or language impairment:</p>
+                                <p class="text-sm">
+                                   Difficulty speaking, understanding speech, or using language to communicate effectively.
+                                </p>
+                            </div>
+                        </div>
                         </div>
                     </label>
                     {{--
