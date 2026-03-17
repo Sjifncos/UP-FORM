@@ -199,7 +199,7 @@ $(document).ready(function() {
             $('#nextBtn').show();
             $('#submitBtn').addClass('hidden');
         }
-
+        /*
         if (step === 1) {
             const isChecked = $('#agreement').is(':checked');
             $('#nextBtn').prop('disabled', !isChecked);
@@ -211,6 +211,7 @@ $(document).ready(function() {
         } else {
             $('#nextBtn').prop('disabled', false).removeClass('opacity-50 cursor-not-allowed');
         }
+            */
 
         if (step === 8) {
             toggleMarriageCertificate();
