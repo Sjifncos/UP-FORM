@@ -1,6 +1,6 @@
 <div class="step" data-step="3">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-        <h1 class="text-[24px] font-semibold text-[#850038]">
+        <h1 class="text-[24px] font-semibold text-[#0E6021]">
             Basic Information
         </h1>
         <div class="col-span-1 md:col-span-2">
@@ -53,7 +53,7 @@
                 <option value="Professional Master in Data Science (Computing)">Professional Master in Data Science (Computing)</option>
             </select>
             <p class="text-[12px] text-gray-500 mt-1">
-                Please Contact The <span class="font-semibold text-[#850038]">OUR</span> if the degree program is incorrect
+                For any questions regarding your primary program, please proceed to <span class="font-semibold text-[#850038]">OUR</span>.
             </p>
         </div>
 

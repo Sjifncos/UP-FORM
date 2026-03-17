@@ -16,4 +16,3 @@
 
     // PSGC Route
     Route::get('/psgc', [PsgcController::class, 'index']);
-    //Route::get('/psgc', [current_PsgcController::class, 'index']);

@@ -58,7 +58,7 @@ window.showToast = function(message, type = 'error') {
 };
 
 $(document).ready(function() {
-    // CSRF token setup (kept for any future AJAX, but not used now)
+    // CSRF token setup
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -71,6 +71,10 @@ $(document).ready(function() {
     let totalSteps = 10;
     let visibleSteps = [1,2,3,4,5,6,7,8,9,10];
     let maxVisibleIndex = 0;
+
+    // Modal confirmation variables
+    let motherConfirmPending = false;
+    let pendingTargetStep = null;
 
     // ---------- Close Toast Button Handler ----------
     $(document).on('click', '.close-toast-btn', function() {
@@ -157,6 +161,13 @@ $(document).ready(function() {
     }
 
     function showStep(step) {
+        // Close modal if open when navigating manually
+        if (motherConfirmPending) {
+            $('#motherLastnameModal').hide().addClass('hidden');
+            motherConfirmPending = false;
+            pendingTargetStep = null;
+        }
+
         $('.step').addClass('hidden');
         $(`.step[data-step="${step}"]`).removeClass('hidden');
 
@@ -212,7 +223,7 @@ $(document).ready(function() {
         }
     }
 
-    // ---------- Validation Function (updated for new date pickers) ----------
+    // ---------- Validation Function ----------
     function validateStep(step) {
         let errors = [];
         const $step = $(`.step[data-step="${step}"]`);
@@ -226,6 +237,8 @@ $(document).ready(function() {
 
         const typeofincome = $('#typeofincome').val();
         const isNotEarning = typeofincome === 'notearning';
+
+        const sameAddressValue = $('#same_address').val();
 
         $step.find('input:not([type="radio"]), select, textarea').each(function () {
             const $field = $(this);
@@ -270,6 +283,8 @@ $(document).ready(function() {
                 'PSGC',
                 'personalemail',
                 'mobilenumber',
+                'emergenency_fullname',
+                'emergency_mobilenumber',
                 'seniorhighschoolattended',
                 'locationofhighschool',
                 'honorsreceived',
@@ -313,7 +328,17 @@ $(document).ready(function() {
             if (foreignFields.includes(fieldName)) {
                 isRequired = isNonPhilippineCitizen;
             }
-
+            if (fieldName && fieldName.startsWith('current_') && sameAddressValue === 'no') {
+                const optionalCurrentFields = [
+                    'current_room_flr_unit_bldg',
+                    'current_house_lot_blk',
+                    'current_street',
+                    'current_subdivision_line2'
+                ];
+                if (!optionalCurrentFields.includes(fieldName)) {
+                    isRequired = true;
+                }
+            }
             if (isRequired && !value) {
                 errors.push(`${label} is required.`);
                 $field.addClass('border-red-500');
@@ -393,7 +418,7 @@ $(document).ready(function() {
                 }
             }
 
-            if (fieldName === 'emergency_phonenumber' && value) {
+            if (fieldName === 'emergency_mobilenumber' && value) {
                 const cleanNumber = value.replace(/[\s\-\(\)]/g, '');
                 const isValid = /^0\d{10}$/.test(cleanNumber);     
                 if (!isValid) {
@@ -429,14 +454,13 @@ $(document).ready(function() {
                 }
             }
 
-            // --- BIRTH DATE validation (using hidden dob field) ---
+            // --- BIRTH DATE validation ---
             if (fieldName === 'dob') {
-                const dobValue = value; // YYYY-MM-DD from hidden input
+                const dobValue = value; // YYYY-MM-DD
                 if (!dobValue) {
                     errors.push(`Birth Date is required.`);
                     $('#birth-input').addClass('border-red-500');
                 } else {
-                    // Parse date in UTC to avoid timezone shifts
                     const parts = dobValue.split('-');
                     if (parts.length !== 3) {
                         errors.push(`Birth Date is invalid.`);
@@ -476,10 +500,10 @@ $(document).ready(function() {
                 }
             }
 
-            // --- MARRIAGE DATE validation (using hidden marriagedate field) ---
+            // --- MARRIAGE DATE validation ---
             if (fieldName === 'marriagedate') {
                 const civilStatus = $('#civilstatus').val();
-                const marriageValue = value; // YYYY-MM-DD from hidden input
+                const marriageValue = value; // YYYY-MM-DD
 
                 if (civilStatus === 'married') {
                     if (!marriageValue) {
@@ -535,7 +559,7 @@ $(document).ready(function() {
                                     }
                                 }
 
-                                // Too far in the past (within last 100 years)
+                                // Too far in the past
                                 const minValidDate = new Date(today);
                                 minValidDate.setUTCFullYear(today.getUTCFullYear() - 100);
                                 if (marriageDate < minValidDate) {
@@ -546,7 +570,6 @@ $(document).ready(function() {
                         }
                     }
                 } else {
-                    // Not married, clear any previous error styling
                     $('#marriage-input').removeClass('border-red-500');
                 }
             }
@@ -561,12 +584,22 @@ $(document).ready(function() {
             }
         }
 
-        // Scholarship specify validation
+        // ===== UPDATED: Scholarship specify validation (dynamic entries) =====
         if ($('#scholarship').val() === 'yes') {
-            const $specifyField = $('#specifyscholarship');
-            if (!$specifyField.val() || $specifyField.val().trim() === '') {
-                errors.push(`Please specify the scholarship details.`);
-                $specifyField.addClass('border-red-500');
+            const $scholarshipInputs = $('input[name="scholarships[]"]');
+            let hasValue = false;
+            $scholarshipInputs.each(function() {
+                if ($(this).val().trim() !== '') {
+                    hasValue = true;
+                    return false; // break loop
+                }
+            });
+            if (!hasValue) {
+                errors.push('Please specify at least one scholarship.');
+                // Highlight the first empty scholarship input
+                $scholarshipInputs.first().addClass('border-red-500');
+            } else {
+                $scholarshipInputs.removeClass('border-red-500');
             }
         }
 
@@ -699,6 +732,16 @@ $(document).ready(function() {
             }
         }
 
+        // Step 5 specific validation: mother's last name should not equal father's last name
+        if (step === 5) {
+            const mothersLastname = $('#mother_lastname').val()?.trim() || '';
+            const fathersLastname = $('#fathers_lastname').val()?.trim() || '';
+            if (mothersLastname && fathersLastname && mothersLastname.toLowerCase() === fathersLastname.toLowerCase()) {
+                errors.push("Mother's maiden name should be different from father's last name. Are you sure?");
+                $('#mother_lastname').addClass('border-red-500');
+            }
+        }
+
         return errors;
     }
 
@@ -755,8 +798,21 @@ $(document).ready(function() {
     });
 
     $('#nextBtn').click(function() {
+        if (motherConfirmPending) return; // ignore if modal is open
+
         const currentIndex = visibleSteps.indexOf(currentStep);
         const errors = validateStep(currentStep);
+
+        // Special case: only mother's last name conflict
+        const motherNameError = "Mother's maiden name should be different from father's last name. Are you sure?";
+        if (errors.length === 1 && errors[0] === motherNameError) {
+            // Show modal
+            $('#motherLastnameModal').removeClass('hidden').show();
+            motherConfirmPending = true;
+            pendingTargetStep = visibleSteps[currentIndex + 1];
+            return;
+        }
+
         if (errors.length === 0) {
             if (currentIndex < totalSteps - 1) {
                 currentStep = visibleSteps[currentIndex + 1];
@@ -768,6 +824,13 @@ $(document).ready(function() {
     });
 
     $('#prevBtn').click(function() {
+        // Close modal if open
+        if (motherConfirmPending) {
+            $('#motherLastnameModal').hide().addClass('hidden');
+            motherConfirmPending = false;
+            pendingTargetStep = null;
+        }
+
         const currentIndex = visibleSteps.indexOf(currentStep);
         if (currentIndex > 0) {
             currentStep = visibleSteps[currentIndex - 1];
@@ -830,6 +893,34 @@ $(document).ready(function() {
     $(document).on('change', '#pwd', function() {
         if (currentStep === 9) {
             togglePWDContainer();
+        }
+    });
+
+    // Modal button handlers
+    $('#modalYes').click(function() {
+        $('#motherLastnameModal').hide().addClass('hidden');
+        motherConfirmPending = false;
+        // Remove red border from mother_lastname if any
+        $('#mother_lastname').removeClass('border-red-500');
+        // Proceed to next step
+        if (pendingTargetStep) {
+            currentStep = pendingTargetStep;
+            showStep(currentStep);
+            pendingTargetStep = null;
+        }
+    });
+
+    $('#modalNo').click(function() {
+        $('#motherLastnameModal').hide().addClass('hidden');
+        motherConfirmPending = false;
+        pendingTargetStep = null;
+        // Keep the red border; do not proceed
+    });
+
+    // Close modal if clicked outside
+    $(document).on('click', '#motherLastnameModal', function(e) {
+        if ($(e.target).is('#motherLastnameModal')) {
+            $('#modalNo').click(); // treat as No
         }
     });
 

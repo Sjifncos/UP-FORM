@@ -1,13 +1,13 @@
 <div class="step" data-step="5">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         <div class="col-span-1 md:col-span-2">
-            <h1 class="text-[24px] font-semibold text-[#850038]">
+            <h1 class="text-[24px] font-semibold text-[#0E6021]">
                 Contact Information
             </h1>
         </div>
         <!-- Contact Details - Full Width Heading -->
         <div class="col-span-1 md:col-span-2">
-            <h1 class="text-[18px] font-semibold text-[#850038] text-center">Contact Details</h1>
+            <h1 class="text-[18px] font-semibold text-[#850038]">Contact Details</h1>
         </div>
 
         <!-- Personal Email -->
@@ -53,17 +53,20 @@
                 Full Name
                 <span class="text-red-500 ml-1">*</span>
             </label>
-            <input required id="" name="" type="text" 
+            <input required name="emergenency_fullname" type="text" 
                 class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
-         <!-- Father's Phone Number -->
+      <!-- Mobile Number -->
         <div class="md:col-span-1 flex flex-col w-full">
-            <label for="emergency_phonenumber" class="font-medium">Mobile Number</label>
-            <input required id="emergency_phonenumber" name="emergency_phonenumber" type="text" 
+            <label for="emergency_mobilenumber" class="font-medium">
+                Mobile Number <span class="text-red-500 ml-1">*</span>
+            </label>
+            <input required id="emergency_mobilenumber" name="emergency_mobilenumber" type="text" 
                 placeholder="0000 000 0000"
                 class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
+            <span class="error-message text-red-500 text-sm hidden" data-for="emergency_mobilenumber"></span>
         </div>
 
         <!-- Father's Information - Full Width Heading -->
@@ -142,7 +145,7 @@
 
         <!-- Mother's Information - Full Width Heading -->
         <div class="col-span-1 md:col-span-2">
-            <h1 class="text-[18px] font-semibold text-[#850038]">Mother's Information</h1>
+            <h1 class="text-[18px] font-semibold text-[#850038]">Mother's Maiden Information</h1>
         </div>
 
         <!-- Mother's First Name -->
@@ -238,5 +241,38 @@
                 </div>
             </div>
         </div>
+
+        <div id="motherLastnameModal" class="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm overflow-y-hidden h-full w-full hidden z-50 transition-opacity" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <!-- modal card -->
+            <div class="relative mx-auto w-96 bg-white rounded-2xl shadow-2xl border border-white/10 p-0">
+                
+                <div class="px-6 pt-2 pb-6 text-center">
+                    <h3 id="modalTitle" class="text-2xl font-semibold tracking-tight text-[#850038] mt-2 mb-3">
+                        Confirm Mother's Last Name
+                    </h3>
+
+                    <div class="mt-1 mb-6 text-black-700 text-base leading-relaxed">
+                        <p class="px-1">
+                            Mother's maiden name is the same as father's last name.
+                        </p>
+                        <p class="font-medium text-black-800 mt-1">
+                            Are you sure this is correct?
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center gap-3">
+                        <button id="modalYes" 
+                                class="px-6 py-2.5 bg-[#2CAC4B] hover:bg-[#23913e] text-white text-base font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#2CAC4B]/50 focus:ring-offset-2">
+                            Yes
+                        </button>
+                        <button id="modalNo" 
+                                class="px-6 py-2.5 bg-[#E60023] hover:bg-[#c4001e] text-white text-base font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#E60023]/50 focus:ring-offset-2">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

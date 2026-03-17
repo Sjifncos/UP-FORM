@@ -40,10 +40,24 @@
         'province' => 'required|string|max:255',
         'city' => 'required|string|max:255',
         'barangay' => 'required|string|max:255',
-        'PSGC' => 'required|string|max:255',
+        //'PSGC' => 'required|string|max:255',
+
+                // Current Address (inside the Philippines) – required only if same_address == 'no'
+        'current_room_flr_unit_bldg' => 'required_if:same_address,no|nullable|string|max:255',
+        'current_house_lot_blk'      => 'required_if:same_address,no|nullable|string|max:255',
+        'current_street'             => 'required_if:same_address,no|nullable|string|max:255',
+        'current_subdivision_line2'  => 'required_if:same_address,no|nullable|string|max:255',
+        'current_region'             => 'required_if:same_address,no|nullable|string|max:255',
+        'current_province'           => 'required_if:same_address,no|nullable|string|max:255',
+        'current_city'               => 'required_if:same_address,no|nullable|string|max:255',
+        'current_barangay'           => 'required_if:same_address,no|nullable|string|max:255',
+        // current_PSGC is disabled and not submitted, so no rule needed
+
         'personalemail' => 'required|email|max:255',
         'mobilenumber' => 'required|string|max:255',
         'landlinenumber' => 'nullable|string|max:255',
+        'emergency_fullname' => 'required|string|max:255',
+        'emergency_mobilenumber' => 'required|string|max:255',
 
         // ===== Academic Matters (step 5) – required only for undergraduates =====
         'seniorhighschoolattended' => 'exclude_if:category,graduate|required|string|max:255',
@@ -57,6 +71,7 @@
         'undergraddegree'       => 'exclude_if:category,undergraduate|required|string|max:255',
         'listofdegree'          => 'exclude_if:category,undergraduate|nullable|string|max:255',
         'lastschoolattended'    => 'exclude_if:category,undergraduate|required|string|max:255',
+        'degrees[]' => 'required|string|max:255',
         'typeofincome'          => 'exclude_if:category,undergraduate|required|in:employeed,self-employeed,combination,passiveincome,notearning',
         'nameofemployer'        => 'exclude_if:category,undergraduate|required_if:typeofincome,employeed,self-employeed,combination,passiveincome|string|max:255',
         'natureofwork'          => 'exclude_if:category,undergraduate|required_if:typeofincome,employeed,self-employeed,combination,passiveincome|string|max:255',

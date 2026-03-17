@@ -1,7 +1,7 @@
 <div class="step" data-step="9">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         <div class="col-span-1 md:col-span-2">
-            <h1 class="text-[24px] font-semibold text-[#850038]">
+            <h1 class="text-[24px] font-semibold text-[#0E6021]">
                 Documents Upload
             </h1>
         </div>
@@ -83,7 +83,7 @@
             <!-- Medical Certificate -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Medical Certificate</label>
-                <input type="file" name="medical_certificate" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                <input type="file" name="medical_certificate" accept=".pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- Student Directory -->
@@ -107,7 +107,7 @@
             <!-- TOR with Remarks (UP Cebu) -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">TOR with Remarks (UP Cebu)</label>
-                <input type="file" name="tor_remarks" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                <input type="file" name="tor_remarks" accept=".pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- PSA Birth Certificate (or LCR if PSA illegible) -->

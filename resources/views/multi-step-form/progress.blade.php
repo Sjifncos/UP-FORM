@@ -12,7 +12,7 @@
     <span id="stepCounter" 
         class="text-[18px] md:text-base font-medium 
                 text-[#850038] bg-[#fce4ec] px-4 py-1.5 rounded-full border border-[#f8bbd0]">
-        Step Completed 0 / 9
+        Step Completed 0 / 10
     </span>
 </div>
 {{--
@@ -39,6 +39,3 @@
     </div>
 </div>
 --}}
-
-
-{{-- Need To Fix the Navigation Bug where the user can naviagte the tab even if the previous step is not completed--}}
