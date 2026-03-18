@@ -53,7 +53,7 @@
                             <li>Please upload a recent 2x2 inch photo (square aspect ratio).</li>
                             <li>Maximum file size: <span class="font-medium">2 MB</span>.</li>
                             <li>A preview will appear automatically after selection.</li>
-                            <li>Click “Upload Image” to submit the file.</li>
+                            {{--    <li>Click “Upload Image” to submit the file.</li> --}}
                         </ul>
                     </div>
                 </details>

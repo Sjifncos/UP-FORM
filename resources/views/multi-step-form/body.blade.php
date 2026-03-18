@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-<body class="bg-[#F0F0F0] min-h-screen flex flex-col items-center justify-center px-4">
+<body class="bg-[#F2F3F4] min-h-screen flex flex-col items-center justify-center px-4">
     @yield('content')
 </body>
 </html>
