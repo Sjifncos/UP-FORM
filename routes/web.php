@@ -7,7 +7,7 @@
    
     // Route to display the multi-step form
     Route::get('/', function () {return view('multi-step-form.form');})->name('form');
-    Route::get('/date', function () {return view('multi-step-form.datepicker');})->name('datepicker');
+    Route::get('/headsup', function () {return view('multi-step-form.headsup');})->name('headsup');
     Route::get('/index', function () {return view('multi-step-form.index');});
     Route::get('/thankyoupage', function () {return view('multi-step-form.submission');});
 

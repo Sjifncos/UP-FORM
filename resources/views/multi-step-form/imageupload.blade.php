@@ -76,37 +76,37 @@
         <div class="col-span-1 md:col-span-2">
     <!-- ========== NEW: Required Documents Section ========== -->
     <div class="mt-8 border-t pt-6 bg-white p-6 rounded-lg shadow-md border border-gray-200">
-        <h3 class="text-lg font-semibold text-[#850038] mb-4">Required Documents</h3>
+        <h3 class="text-lg font-semibold text-[#850038] mb-4">Other Documents</h3>
         
         <!-- Two-column grid for file inputs -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Medical Certificate -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Medical Certificate</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Medical Certificate (required)</label>
                 <input type="file" name="medical_certificate" accept=".pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- Student Directory -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Student Directory</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Student Directory (required)</label>
                 <input type="file" name="student_directory" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- Notice of Admission -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Notice of Admission</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Notice of Admission (required)</label>
                 <input type="file" name="notice_of_admission" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- Honorable Dismissal -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Honorable Dismissal</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Honorable Dismissal (if applicable)</label>
                 <input type="file" name="honorable_dismissal" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
             <!-- TOR with Remarks (UP Cebu) -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">TOR with Remarks (UP Cebu)</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">TOR with Remarks (UP Cebu) (required)</label>
                 <input type="file" name="tor_remarks" accept=".pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
@@ -124,13 +124,13 @@
 
             <!-- PWD Card (conditional) -->
             <div id="pwd_card_container" class="hidden">
-                <label class="block text-sm font-medium text-gray-700 mb-2">PWD Card</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">PWD Card (required)</label>
                 <input type="file" name="pwd_card_container" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
 
              <!-- Hyphenated and husbands full name (conditional) -->
             <div id="marriage_container" class="hidden">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Court Order re: Change of Name.</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Court Order re: Change of Name. (if applicable)</label>
                 <input type="file" name="marriage_container" accept=".pdf,.jpg,.jpeg,.png" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             </div>
             

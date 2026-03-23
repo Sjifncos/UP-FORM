@@ -160,6 +160,22 @@ $(document).ready(function() {
         }
     }
 
+    // ---------- Toggle Court Order upload (marriage_container) ----------
+    function toggleCourtOrderContainer() {
+        const sex = $('#sexatbirth').val();
+        const civil = $('#civilstatus').val();
+        const nameFormat = $('input[name="name_format"]:checked').val();
+        const showCourtOrder = (sex === 'female' && civil === 'married' && (nameFormat === 'hyphenated' || nameFormat === 'husband'));
+
+        if (showCourtOrder) {
+            $('#marriage_container').removeClass('hidden');
+        } else {
+            $('#marriage_container').addClass('hidden');
+            // Clear the file input when hidden to avoid stale data
+            $('#marriage_container input[type="file"]').val('');
+        }
+    }
+
     function showStep(step) {
         // Close modal if open when navigating manually
         if (motherConfirmPending) {
@@ -199,25 +215,13 @@ $(document).ready(function() {
             $('#nextBtn').show();
             $('#submitBtn').addClass('hidden');
         }
-        /*
-        if (step === 1) {
-            const isChecked = $('#agreement').is(':checked');
-            $('#nextBtn').prop('disabled', !isChecked);
-            if (!isChecked) {
-                $('#nextBtn').addClass('opacity-50 cursor-not-allowed');
-            } else {
-                $('#nextBtn').removeClass('opacity-50 cursor-not-allowed');
-            }
-        } else {
-            $('#nextBtn').prop('disabled', false).removeClass('opacity-50 cursor-not-allowed');
-        }
-            */
 
         if (step === 8) {
             toggleMarriageCertificate();
         }
         if (step === 9) {
             togglePWDContainer();
+            toggleCourtOrderContainer(); // ensure court order visibility when step 9 loads
         }
         if (step === 5) {
             toggleGuardianSection();
@@ -314,7 +318,7 @@ $(document).ready(function() {
             const foreignFields = [
                 'citizenship_country',
                 'outside_ph_addressline1',
-                'outside_ph_addressline2',
+                //'outside_ph_addressline2',
                 'city_foreign',
                 'state/province_foreign',
                 'zipcode_foreign',
@@ -329,17 +333,24 @@ $(document).ready(function() {
             if (foreignFields.includes(fieldName)) {
                 isRequired = isNonPhilippineCitizen;
             }
-            if (fieldName && fieldName.startsWith('current_') && sameAddressValue === 'no') {
-                const optionalCurrentFields = [
-                    'current_room_flr_unit_bldg',
-                    'current_house_lot_blk',
-                    'current_street',
-                    'current_subdivision_line2'
-                ];
-                if (!optionalCurrentFields.includes(fieldName)) {
-                    isRequired = true;
+
+            // Updated condition for current address fields
+            if (fieldName && fieldName.startsWith('current_')) {
+                const citizenshipVal = $('#citizenship').val();
+                const showCurrent = (citizenshipVal === 'no') || (citizenshipVal === 'yes' && sameAddressValue === 'no');
+                if (showCurrent) {
+                    const optionalCurrentFields = [
+                        'current_room_flr_unit_bldg',
+                        'current_house_lot_blk',
+                        'current_street',
+                        'current_subdivision_line2'
+                    ];
+                    if (!optionalCurrentFields.includes(fieldName)) {
+                        isRequired = true;
+                    }
                 }
             }
+
             if (isRequired && !value) {
                 errors.push(`${label} is required.`);
                 $field.addClass('border-red-500');
@@ -670,7 +681,7 @@ $(document).ready(function() {
         if (step === 9) {
             const profileFile = $('#imageInput')[0].files[0];
             if (!profileFile) {
-                errors.push('Profile picture is required.');
+                errors.push('2x2 image is required.');
                 $('#imageInput').addClass('border-red-500');
             } else {
                 $('#imageInput').removeClass('border-red-500');
@@ -680,7 +691,7 @@ $(document).ready(function() {
                 { name: 'medical_certificate', label: 'Medical Certificate' },
                 { name: 'student_directory', label: 'Student Directory' },
                 { name: 'notice_of_admission', label: 'Notice of Admission' },
-                { name: 'honorable_dismissal', label: 'Honorable Dismissal' },
+               // { name: 'honorable_dismissal', label: 'Honorable Dismissal' },
                 { name: 'tor_remarks', label: 'TOR with Remarks' },
                 { name: 'birth_certificate', label: 'Birth Certificate (PSA/LCR)' }
             ];
@@ -715,6 +726,13 @@ $(document).ready(function() {
                 } else {
                     $('input[name="pwd_card_container"]').removeClass('border-red-500');
                 }
+            }
+
+            // Court Order re: Change of Name (if visible) – now optional
+            if (!$('#marriage_container').hasClass('hidden')) {
+                // Optional: you can still remove the red border if it was previously added
+                $('input[name="marriage_container"]').removeClass('border-red-500');
+                // No required validation – no error is pushed
             }
         }
 
@@ -889,6 +907,8 @@ $(document).ready(function() {
         if (currentStep === 8) {
             toggleMarriageCertificate();
         }
+        // Also trigger court order toggle when civil status changes
+        toggleCourtOrderContainer();
     });
 
     $(document).on('change', '#pwd', function() {
@@ -896,6 +916,10 @@ $(document).ready(function() {
             togglePWDContainer();
         }
     });
+
+    // Listen for changes that affect court order visibility
+    $('#sexatbirth').on('change', toggleCourtOrderContainer);
+    $(document).on('change', 'input[name="name_format"]', toggleCourtOrderContainer);
 
     // Modal button handlers
     $('#modalYes').click(function() {
@@ -925,8 +949,10 @@ $(document).ready(function() {
         }
     });
 
+    // Initial calls
     showStep(currentStep);
     updateVisibleSteps();
+    toggleCourtOrderContainer(); // ensure initial state
 
     $(document).on('citizenshipChanged', function() {
         if (currentStep === 4) {

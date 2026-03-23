@@ -12,6 +12,7 @@
             @csrf
             {{-- (hidden by default, shown via jQuery) --}}
           <!-- Steps in correct order -->
+            {{--    @include('multi-step-form.requirements') --}}
             @include('multi-step-form.Agreement')      
             @include('multi-step-form.Verification')  
             @include('multi-step-form.BasicInfo')      

@@ -17,7 +17,7 @@
             </label>
             <input required id="personalemail" name="personalemail" type="text" 
                 {{--    placeholder="ex: myname@example.com" --}}
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">Personal E-mail will be Autofill</p>
             <span class="error-message text-red-500 text-sm hidden" data-for="personalemail"></span>
         </div>
@@ -29,7 +29,7 @@
             </label>
             <input required id="mobilenumber" name="mobilenumber" type="text" 
                 placeholder="0000 000 0000"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
             <span class="error-message text-red-500 text-sm hidden" data-for="mobilenumber"></span>
         </div>
@@ -39,7 +39,7 @@
             <label for="landlinenumber" class="font-medium">Landline Number</label>
             <input id="landlinenumber" name="landlinenumber" type="text" 
                 placeholder="(032) 000 0000"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. (032) 345 6789</p>
         </div>
 
@@ -54,7 +54,7 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required name="emergenency_fullname" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
       <!-- Mobile Number -->
@@ -64,7 +64,7 @@
             </label>
             <input required id="emergency_mobilenumber" name="emergency_mobilenumber" type="text" 
                 placeholder="0000 000 0000"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
             <span class="error-message text-red-500 text-sm hidden" data-for="emergency_mobilenumber"></span>
         </div>
@@ -81,14 +81,14 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="fathers_firstname" name="fathers_firstname" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Father's Middle Name -->
         <div class="md:col-span-1 flex flex-col w-full">
             <label for="fathers_middlename" class="font-medium">Middle Name</label>
             <input required id="fathers_middlename" name="fathers_middlename" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
          <!-- Name Suffix -->
@@ -97,7 +97,7 @@
                 Name Suffix
             </label>
             <select id="father_suffix" name="father_suffix" required
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
                 focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
                 <option value="" disabled selected>Please Select</option>
                 <option value="none">None</option>
@@ -123,7 +123,7 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="fathers_lastname" name="fathers_lastname" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Father's Phone Number -->
@@ -131,7 +131,7 @@
             <label for="fathers_phonenumber" class="font-medium">Mobile Number</label>
             <input required id="fathers_phonenumber" name="fathers_phonenumber" type="text" 
                 placeholder="0000 000 0000"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
         </div>
 
@@ -140,7 +140,7 @@
             <label for="fathers_email" class="font-medium">E-mail</label>
             <input required id="fathers_email" name="fathers_email" type="text" 
                 placeholder="ex: myname@example.com"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Mother's Information - Full Width Heading -->
@@ -155,14 +155,14 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="mother_firstname" name="mother_firstname" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Mother's Middle Name -->
         <div class="md:col-span-1 flex flex-col w-full">
             <label for="mother_middlename" class="font-medium">Middle Name</label>
             <input required id="mother_middlename" name="mother_middlename" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Mother's Last Name -->
@@ -172,7 +172,7 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="mother_lastname" name="mother_lastname" type="text" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Mother's Phone Number -->
@@ -180,7 +180,7 @@
             <label for="mother_phonenumber" class="font-medium">Mobile Number</label>
             <input required id="mother_phonenumber" name="mother_phonenumber" type="text" 
                 placeholder="0000 000 0000"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
         </div>
 
@@ -189,7 +189,7 @@
             <label for="mother_email" class="font-medium">E-mail</label>
             <input required id="mother_email" name="mother_email" type="text"
                 placeholder="ex: myname@example.com" 
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Guardian's Information - Hidden by default -->
@@ -203,14 +203,14 @@
                         <span class="text-red-500 ml-1">*</span>
                     </label>
                     <input id="guardian_firstname" name="guardian_firstname" type="text" 
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 </div>
 
                 <!-- Guardian's Middle Name -->
                 <div class="md:col-span-1 flex flex-col w-full">
                     <label for="guardian_middlename" class="font-medium">Middle Name</label>
                     <input id="guardian_middlename" name="guardian_middlename" type="text" 
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 </div>
 
                 <!-- Guardian's Last Name -->
@@ -220,7 +220,7 @@
                         <span class="text-red-500 ml-1">*</span>
                     </label>
                     <input id="guardian_lastname" name="guardian_lastname" type="text" 
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 </div>
 
                 <!-- Guardian's Phone Number -->
@@ -228,7 +228,7 @@
                     <label for="guardian_phonenumber" class="font-medium">Mobile Number</label>
                     <input id="guardian_phonenumber" name="guardian_phonenumber" type="text"
                         placeholder="0000 000 0000" 
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                         <p class="text-[12px] text-gray-500 mt-1">ex. 0912 345 6789</p>
                 </div>
 
@@ -237,7 +237,7 @@
                     <label for="guardian_email" class="font-medium">E-mail</label>
                     <input id="guardian_email" name="guardian_email" type="text" 
                         placeholder="ex: myname@example.com"
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 </div>
             </div>
         </div>

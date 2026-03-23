@@ -8,10 +8,10 @@
                 Degree Program <span class="text-red-500">*</span>
             </label>
             <select id="degreeprogram" name="degreeprogram" required
-                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
                     focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-1 
                     appearance-none">
-                <option value="" disabled selected>Autofill</option>
+                <option value="" disabled selected>Please Select</option>
                 <option value="AA Sports Studies">AA Sports Studies</option>
                 <option value="B Fine Arts (Product Design)">B Fine Arts (Product Design)</option>
                 <option value="B Fine Arts (Studio Arts)">B Fine Arts (Studio Arts)</option>
@@ -64,7 +64,7 @@
             </label>
             <input required id="first_name" name="first_name" type="text"
                 class="peer w-full px-4 py-3 text-base bg-white outline-none 
-                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <div class="relative w-full">
@@ -73,7 +73,7 @@
             </label>
             <input id="middle_name" name="middle_name" type="text"
                 class="peer w-full px-4 py-3 text-base bg-white outline-none 
-                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <div class="relative w-full">
@@ -82,7 +82,7 @@
             </label>
             <input required id="last_name" name="last_name" type="text"
                 class="peer w-full px-4 py-3 text-base bg-white outline-none 
-                    border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
 
         <!-- Name Suffix -->
@@ -91,7 +91,7 @@
                 Name Suffix
             </label>
             <select id="name_suffix" name="name_suffix"
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
                 focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
                 <option value="" disabled selected>Please Select</option>
                 <option value="none">None</option>
@@ -128,8 +128,8 @@
                 <div id="birth-calendar"
                      class="datepicker-calendar datepicker-hidden absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-10 transition-all duration-150 sm:left-auto sm:w-80 mx-auto">
                     <div class="flex items-center justify-between gap-1 mb-4">
-                        <select id="birth-month" class="block w-28 text-sm border-gray-300 rounded-md shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
-                        <select id="birth-year" class="block w-20 text-sm border-gray-300 rounded-md shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
+                        <select id="birth-month" class="block w-28 text-sm border-gray-300 rounded-[12px] shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
+                        <select id="birth-year" class="block w-20 text-sm border-gray-300 rounded-[12px] shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
                         <div class="flex gap-1">
                             <button type="button" id="birth-prev" class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@
         <div class="relative w-full">
             <label for="sexatbirth" class="font-medium">Sex at Birth <span class="text-red-500 ml-1">*</span></label>
             <select id="sexatbirth" name="sexatbirth" required
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] focus:outline-none 
                 focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
                 appearance-none">
                 <option value="" disabled selected>Please Select</option>
@@ -178,7 +178,7 @@
                 Birth Place <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="birthplace" name="birthplace" type="text"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             <p class="text-[12px] text-gray-500 mt-1">ex. Cebu City</p>
         </div>
 
@@ -188,7 +188,7 @@
                 Civil Status<span class="text-red-500 ml-1">*</span>
             </label>
             <select id="civilstatus" name="civilstatus" required
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] focus:outline-none 
                 focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
                 appearance-none">
                 <option value="" disabled selected>Please Select</option>
@@ -219,8 +219,8 @@
                     <div id="marriage-calendar"
                          class="datepicker-calendar datepicker-hidden absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-10 transition-all duration-150 sm:left-auto sm:w-80 mx-auto">
                         <div class="flex items-center justify-between gap-1 mb-4">
-                            <select id="marriage-month" class="block w-28 text-sm border-gray-300 rounded-md shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
-                            <select id="marriage-year" class="block w-20 text-sm border-gray-300 rounded-md shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
+                            <select id="marriage-month" class="block w-28 text-sm border-gray-300 rounded-[12px] shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
+                            <select id="marriage-year" class="block w-20 text-sm border-gray-300 rounded-[12px] shadow-sm focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] bg-white py-1.5 px-2"></select>
                             <div class="flex gap-1">
                                 <button type="button" id="marriage-prev" class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,7 +254,7 @@
             <div id="preferred_name_section" class="col-span-1 md:col-span-2 text-justify">
                 <p class="text-black-700">
                     Under <span class="font-semibold text-[#850038]">
-                        <a target="_blank" href="https://amslaw.ph/philippine-laws/civil-law/civil-code-of-the-philippines(4)"
+                        <a target="_blank" href="https://pcw.gov.ph/republic-act-386-the-civil-code-of-the-philippines/"
                            class="font-medium text-[#850038] hover:text-[#850038]">
                             Article 370
                         </a>
@@ -284,7 +284,7 @@
                         Husband's Surname <span class="text-red-500">*</span>
                     </label>
                     <input type="text" id="husband_surname" name="husband_surname"
-                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-md
+                           class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px]
                                   focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021]
                                   transition-colors mt-1"
                            placeholder="Enter husband's surname">
@@ -482,7 +482,7 @@
                                 cellDate.getMonth() === today.getMonth() &&
                                 cellDate.getDate() === today.getDate();
 
-                let classNames = 'h-9 w-full rounded-md flex items-center justify-center transition-colors cursor-pointer ';
+                let classNames = 'h-9 w-full rounded-[12px] flex items-center justify-center transition-colors cursor-pointer ';
 
                 if (!isCurrentMonth) {
                     classNames += 'text-gray-300 hover:bg-gray-100 ';
@@ -491,7 +491,7 @@
                 }
 
                 if (isSelected) {
-                    classNames = 'h-9 w-full rounded-md flex items-center justify-center transition-colors cursor-pointer bg-[#0E6021] text-white hover:bg-[#0a4a1a] font-medium';
+                    classNames = 'h-9 w-full rounded-[12px] flex items-center justify-center transition-colors cursor-pointer bg-[#0E6021] text-white hover:bg-[#0a4a1a] font-medium';
                 } else if (isToday && isCurrentMonth && !isSelected) {
                     classNames += 'border border-[#0E6021] bg-green-50';
                 }

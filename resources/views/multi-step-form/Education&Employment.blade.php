@@ -10,7 +10,7 @@
         <div class="relative w-full">
             <label for="educationalattainment" class="font-medium">What is your highest educational attainment? <span class="text-red-500 ml-1">*</span></label>
             <select id="educationalattainment" name="educationalattainment" required 
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
                 <option disabled selected>Please Select</option>
                 <option value="bachelorsdegree">Bachelor’s degree</option>
                 <option value="postbaccalaureate">Post-baccalaureate diploma / certificate</option>
@@ -26,7 +26,7 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="undergraddegree" name="undergraddegree" type="text"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
         
         <!-- Dynamic Degree Entries -->
@@ -37,7 +37,7 @@
             <div id="degree-inputs" class="space-y-2 mt-2">
                 <div class="degree-entry flex items-center gap-2">
                     <input type="text" name="degrees[]" 
-                        class="w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"
+                        class="w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"
                         placeholder="e.g., Master of Science in Computer Science">
                     <button type="button" class="remove-degree text-red-600 hover:text-red-800 p-2" title="Remove entry" style="display: none;">
                         <svg fill="#850038" width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.48 3.512c-2.172-2.171-5.172-3.514-8.486-3.514-6.628 0-12.001 5.373-12.001 12.001 0 3.314 1.344 6.315 3.516 8.487 2.172 2.171 5.172 3.514 8.486 3.514 6.628 0 12.001-5.373 12.001-12.001 0-3.314-1.344-6.315-3.516-8.487zm-1.542 15.427c-1.777 1.777-4.232 2.876-6.943 2.876-5.423 0-9.819-4.396-9.819-9.819 0-2.711 1.099-5.166 2.876-6.943 1.777-1.777 4.231-2.876 6.942-2.876 5.422 0 9.818 4.396 9.818 9.818 0 2.711-1.099 5.166-2.876 6.942z"/><path d="m13.537 12 3.855-3.855c.178-.194.287-.453.287-.737 0-.603-.489-1.091-1.091-1.091-.285 0-.544.109-.738.287l.001-.001-3.855 3.855-3.855-3.855c-.193-.178-.453-.287-.737-.287-.603 0-1.091.489-1.091 1.091 0 .285.109.544.287.738l-.001-.001 3.855 3.855-3.855 3.855c-.218.2-.354.486-.354.804 0 .603.489 1.091 1.091 1.091.318 0 .604-.136.804-.353l.001-.001 3.855-3.855 3.855 3.855c.2.218.486.354.804.354.603 0 1.091-.489 1.091-1.091 0-.318-.136-.604-.353-.804l-.001-.001z"/></svg>
@@ -57,14 +57,14 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <input required id="lastschoolattended" name="lastschoolattended" type="text"
-                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
         </div>
         
         <!-- Primary Source Income -->
         <div class="relative w-full">
             <label for="typeofincome" class="font-medium">Primary Source of Income <span class="text-red-500 ml-1">*</span></label>
             <select id="typeofincome" name="typeofincome" required 
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
                 <option disabled selected>Please Select</option>
                 <option value="employeed">Employed (salary from an employer)</option>
                 <option value="self-employeed">Self-employed / Freelance / Professional practice</option>
@@ -83,7 +83,7 @@
                     <span class="text-red-500 ml-1">*</span>
                 </label>
                 <input id="nameofemployer" name="nameofemployer" type="text"
-                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             </div>
             <div class="relative w-full">
                 <label for="natureofwork" class="font-medium">
@@ -91,7 +91,7 @@
                     <span class="text-red-500 ml-1">*</span>
                 </label>
                 <input id="natureofwork" name="natureofwork" type="text"
-                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             </div>
         </div>
         
@@ -100,7 +100,7 @@
             <div class="relative w-full">
                 <label for="income" class="font-medium">Monthly Gross Earnings (before taxes) <span class="text-red-500 ml-1">*</span></label>
                 <select id="income" name="income" required 
-                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
+                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2 appearance-none">
                     <option disabled selected>Please Select</option>
                     <option value="below20k">Below ₱20,000</option>
                     <option value="20k-39k">₱20,000 - ₱39,999</option>
@@ -172,7 +172,7 @@
                     Please Specify the other fundings.
                 </label>
                 <input id="funding-other-input" name="funding-other-input" type="text" 
-                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                    class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
             </div>
         </div>
     </div> 
@@ -189,24 +189,28 @@
                 const nameOfEmployer = document.getElementById('nameofemployer');
                 const natureOfWork = document.getElementById('natureofwork');
                 const income = document.getElementById('income');
-                
-                if (this.value === 'notearning') {
-                    employerFieldsContainer.classList.add('hidden');
-                    incomeContainer.classList.add('hidden');
-                    nameOfEmployer.removeAttribute('required');
-                    natureOfWork.removeAttribute('required');
-                    income.removeAttribute('required');
-                    nameOfEmployer.value = '';
-                    natureOfWork.value = '';
-                    income.value = '';
-                } else {
+
+                if (this.value === 'employeed') {   // only for "Employed (salary from an employer)"
                     employerFieldsContainer.classList.remove('hidden');
                     incomeContainer.classList.remove('hidden');
                     nameOfEmployer.setAttribute('required', 'required');
                     natureOfWork.setAttribute('required', 'required');
                     income.setAttribute('required', 'required');
+                } else {
+                    employerFieldsContainer.classList.add('hidden');
+                    incomeContainer.classList.add('hidden');
+                    nameOfEmployer.removeAttribute('required');
+                    natureOfWork.removeAttribute('required');
+                    income.removeAttribute('required');
+                    // Clear values when hidden
+                    nameOfEmployer.value = '';
+                    natureOfWork.value = '';
+                    income.value = '';
                 }
             });
+
+            // Trigger change on page load to set initial visibility (hides fields by default)
+            typeOfIncome.dispatchEvent(new Event('change'));
         }
 
         // Handle other funding checkbox
@@ -235,7 +239,7 @@
             entry.className = 'degree-entry flex items-center gap-2 mt-2';
             entry.innerHTML = `
                 <input type="text" name="degrees[]" value="${value.replace(/"/g, '&quot;')}"
-                    class="w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"
+                    class="w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors"
                     placeholder="e.g., Master of Science in Computer Science">
                 <button type="button" class="remove-degree text-red-600 hover:text-red-800 p-2" title="Remove entry">
                     <svg fill="#850038" width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.48 3.512c-2.172-2.171-5.172-3.514-8.486-3.514-6.628 0-12.001 5.373-12.001 12.001 0 3.314 1.344 6.315 3.516 8.487 2.172 2.171 5.172 3.514 8.486 3.514 6.628 0 12.001-5.373 12.001-12.001 0-3.314-1.344-6.315-3.516-8.487zm-1.542 15.427c-1.777 1.777-4.232 2.876-6.943 2.876-5.423 0-9.819-4.396-9.819-9.819 0-2.711 1.099-5.166 2.876-6.943 1.777-1.777 4.231-2.876 6.942-2.876 5.422 0 9.818 4.396 9.818 9.818 0 2.711-1.099 5.166-2.876 6.942z"/><path d="m13.537 12 3.855-3.855c.178-.194.287-.453.287-.737 0-.603-.489-1.091-1.091-1.091-.285 0-.544.109-.738.287l.001-.001-3.855 3.855-3.855-3.855c-.193-.178-.453-.287-.737-.287-.603 0-1.091.489-1.091 1.091 0 .285.109.544.287.738l-.001-.001 3.855 3.855-3.855 3.855c-.218.2-.354.486-.354.804 0 .603.489 1.091 1.091 1.091.318 0 .604-.136.804-.353l.001-.001 3.855-3.855 3.855 3.855c.2.218.486.354.804.354.603 0 1.091-.489 1.091-1.091 0-.318-.136-.604-.353-.804l-.001-.001z"/></svg>    

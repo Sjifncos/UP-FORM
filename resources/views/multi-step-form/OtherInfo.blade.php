@@ -11,7 +11,7 @@
                 Are you the first person in your immediate family to attend College/University?<span class="text-red-500 ml-1">*</span>
             </label>
             <select id="firstperson_to_attend_college" name="firstperson_to_attend_college" required 
-            class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
             focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
             appearance-none">
                 <option disabled selected>Please Select</option>
@@ -26,7 +26,7 @@
                 Are you the first person in your immediate family to attend the University of the Philippines?<span class="text-red-500 ml-1">*</span>
             </label>
             <select id="firstpersonup" name="firstpersonup" required 
-            class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
             focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
             appearance-none">
                 <option disabled selected>Please Select</option>
@@ -41,7 +41,7 @@
                 What income range best describes your household's annual income (before taxes)?<span class="text-red-500 ml-1">*</span>
             </label>
             <select id="annualincome" name="annualincome" required 
-            class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
             focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
             appearance-none">
                 <option disabled selected>Please Select</option>
@@ -77,7 +77,7 @@
                 <span class="text-red-500 ml-1">*</span>
             </label>
             <select id="pwd" name="pwd" required 
-            class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+            class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
             focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
             appearance-none">
                 <option disabled selected>Please Select</option>
@@ -555,7 +555,7 @@
                         Please Specify.
                     </label>
                     <input required id="support-specify" name="support-specify" type="text" 
-                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                        class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                 </div>
             </div>
         </div>
@@ -576,7 +576,7 @@
                     <span class="text-red-500 ml-1">*</span>
                 </label>
                 <select id="ipra" name="ipra" required 
-                class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
                 focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
                 appearance-none">
                     <option disabled selected>Please Select</option>
@@ -592,7 +592,7 @@
                             Indigenous Peoples group:<span class="text-red-500 ml-1">*</span>
                         </label>
                         <select id="indigenous_group" name="indigenous_group" 
-                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-md 
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-[12px] 
                         focus:outline-none focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2
                         appearance-none">
                             <option disabled selected>Please Select</option>
@@ -629,7 +629,7 @@
                                 Please Specify.
                             </label>
                             <input required id="ipra_specify" name="ipra_specify" type="text" 
-                                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-md focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
+                                class="peer w-full px-4 py-3 text-base bg-white outline-none border-2 border-gray-300 rounded-[12px] focus:border-[#0E6021] focus:ring-1 focus:ring-[#0E6021] transition-colors mt-2"/>
                         </div>
                     </div>
                 </div>
